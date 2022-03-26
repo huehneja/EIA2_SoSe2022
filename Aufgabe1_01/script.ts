@@ -25,7 +25,7 @@ verse = _subjects[subjectsNumber] + " " + _verbs[verbsNumber] + " " + _objects[o
 _subjects.splice(subjectsNumber, 1);
 _objects.splice(objectsNumber, 1);
 _verbs.splice(verbsNumber, 1);
-return(verse);
+return verse;
 }
 }
 
