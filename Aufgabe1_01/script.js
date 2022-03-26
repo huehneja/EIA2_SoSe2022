@@ -1,4 +1,11 @@
 "use strict";
+/*
+Aufgabe: Aufgabe 1.01 Zufallsgedicht
+Name: Jason Hühne
+Matrikel: 269665
+Datum: 26.03.2022
+Quellen: /
+*/
 var zufallsGedicht;
 (function (zufallsGedicht) {
     let subjects = ["Drachenlord", "Snoop Dog", "Ein überdurchschnittlich großer Mann", "Ein Zeuge", "Die Gesellschaft", "Mein linker Zeh", "Eine böse Schattengestalt"];

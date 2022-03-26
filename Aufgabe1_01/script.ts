@@ -1,3 +1,10 @@
+/*
+Aufgabe: Aufgabe 1.01 Zufallsgedicht
+Name: Jason Hühne
+Matrikel: 269665
+Datum: 26.03.2022
+Quellen: /
+*/
 namespace zufallsGedicht {
 let subjects: string [] = ["Drachenlord", "Snoop Dog", "Ein überdurchschnittlich großer Mann", "Ein Zeuge", "Die Gesellschaft", "Mein linker Zeh", "Eine böse Schattengestalt"];
 let verbs: string [] = ["löscht", "programmiert", "massiert", "übersteht", "überfährt", "googlet", "gewinnt gegen"];
@@ -21,3 +28,4 @@ _verbs.splice(verbsNumber, 1);
 return(verse);
 }
 }
+
