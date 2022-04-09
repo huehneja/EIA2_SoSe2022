@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-09T16:22:19.896Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.65" etag="xtTH0WFwZ_0gsalg9b80" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-09T16:31:36.072Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.65" etag="URwCGMWjULeBdF_dr7DT" version="17.4.2" type="github">
   <diagram id="5fvetMHeEvb6ogv8dqny" name="Page-1">
     <mxGraphModel dx="1151" dy="637" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -236,13 +236,16 @@
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-96" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="XLRes0Gc-2Ke0w_aSx6O-93" target="XLRes0Gc-2Ke0w_aSx6O-95">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="XLRes0Gc-2Ke0w_aSx6O-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="XLRes0Gc-2Ke0w_aSx6O-93" target="XLRes0Gc-2Ke0w_aSx6O-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-93" value="" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="827" y="768" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-109" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="1" source="XLRes0Gc-2Ke0w_aSx6O-95" target="XLRes0Gc-2Ke0w_aSx6O-108">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="XLRes0Gc-2Ke0w_aSx6O-95" value="remove SpanElements&lt;br&gt;&lt;br&gt;remove Strings from Array&lt;br&gt;&lt;br&gt;&amp;nbsp;endTurn = true&lt;br&gt;&lt;br&gt;Timeout 200ms =&amp;gt; endTurn = false" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="XLRes0Gc-2Ke0w_aSx6O-95" value="remove SpanElements&lt;br&gt;&lt;br&gt;remove Strings from Array&lt;br&gt;&lt;br&gt;&amp;nbsp;endTurn = true&lt;br&gt;&lt;br&gt;Timeout 2000ms =&amp;gt; endTurn = false" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="735" y="938" width="212" height="107" as="geometry" />
         </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-99" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;rounded=0;fontSize=12;" vertex="1" parent="1">
@@ -287,13 +290,16 @@
           <mxGeometry x="852" y="1361" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-114" value="[memorySet [0] == undefined]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="669" y="1178" width="183" height="30" as="geometry" />
+          <mxGeometry x="681" y="1180" width="183" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-115" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;rounded=1;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="711" y="1097.5" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XLRes0Gc-2Ke0w_aSx6O-117" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;rounded=1;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="570" y="543" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XLRes0Gc-2Ke0w_aSx6O-119" value="isFirstCard = true&lt;br&gt;&lt;br&gt;endTurn = true&lt;br&gt;&lt;br&gt;Timeout 2000ms =&amp;gt; endTurn = false&lt;br&gt;&lt;br&gt;undraw Strings on SpanElement" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="552.5" y="738.5" width="233" height="139" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
