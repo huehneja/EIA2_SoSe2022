@@ -2,7 +2,7 @@
 Aufgabe: Aufgabe 1.03 EventInspector
 Name: Jason Hühne
 Matrikel: 269665
-Datum: 26.03.2022
+Datum: 01.04.2022
 Quellen: Habe mit Richard zusammengearbeitet
 */
 namespace EventInspector {
