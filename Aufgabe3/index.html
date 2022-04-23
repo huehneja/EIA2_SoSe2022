@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Hühne - Memory Settings</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body style="font-family: Verdana;">
+    <form onsubmit="return false">
+        <fieldset>
+            <legend>Anzahl Paare</legend>
+            <input type="number" name="pairAmount" id="pairAmount" min="5" max="25" step="1" value="5">
+        </fieldset>
+        <fieldset>
+            <legend>Kartengröße</legend>
+            <input type="range" name="cardSize" id="cardSize" min="0.5" max="1" step="0.01">
+        </fieldset>
+        <fieldset>
+            <legend>Farben</legend>
+            <input type="color" name="bgColor" id="bgColor" value="#ffffff">
+            <label for="bgColor">- Hintergrund</label>
+
+            <br>
+            <input type="color" name="fontColor" id="fontColor" value="#000000">
+            <label for="fontColor">- Schrift</label>
+
+            <br>
+            <input type="color" name="cardColor" id="cardColor" value="#00FF04">
+            <label for="cardColor">- Karten</label>
+        </fieldset>
+        <fieldset>
+            <legend>Schriftart</legend>
+            <input type="radio" name="font" id="font0" checked="checked" value="Verdana" >
+            <label for="font0" style="font-family: Verdana;">Schriftart 1</label>
+
+            <br>
+            <input type="radio" name="font" id="font1" value="Comic Sans MS, Comic Sans" >
+            <label for="font1" style="font-family: Comic Sans MS, Comic Sans;">Schriftart 2</label>
+
+            <br>
+            <input type="radio" name="font" id="font2" value="Times New Roman" >
+            <label for="font2" style="font-family: Times New Roman;">Schriftart 3</label>
+
+        </fieldset>
+        <button id="submit">Spiel starten!</button>
+    </form>
+    <div id="wrapper">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+fieldset {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+#submit {
+    position: absolute;
+    margin-top: 1em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+}
+.hidden {
+    display: none;
+}
+div {
+    margin: 5px;
+    float: left;
+    left: 29px;
+    text-align: center;
+    border-radius: 0.5em;
+}
