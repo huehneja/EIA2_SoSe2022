@@ -14,9 +14,6 @@ fieldset {
     transform: translate(-50%, -50%);
     border-radius: 2em;
 }
-.hidden {
-    display: none;
-}
 div {
     margin: 5px;
     float: left;

@@ -18,13 +18,14 @@ var MemorySettings;
     function hndLoad(_event) {
         let submitButton = document.getElementById("submit");
         submitButton.addEventListener("click", hndSubmit);
+        submitButton.addEventListener("touchend", hndSubmit);
     }
     function hndSubmit(_event) {
         let formdata = new FormData(document.forms[0]);
         let form = document.querySelector("form");
         for (let value of formdata.values())
             settings.push(value);
-        form.className = "hidden";
+        form.style.display = "none";
         startMemory(settings[0], settings[1], settings[2], settings[3], settings[4], settings[5]);
     }
     function startMemory(pairAmount, cardSize, bgColor, fontColor, cardColor, font) {
@@ -32,6 +33,7 @@ var MemorySettings;
         endCondition = parseInt(`${pairAmount}`);
         memorySet.splice(0, (parseInt(`${pairAmount}`) - memorySet.length) * -1);
         let memorySetPairs = memorySet;
+        let wrapper = document.getElementById("wrapper");
         for (let i = parseInt(`${pairAmount}`); i >= 1; i--) {
             memorySet.push(memorySetPairs[i - 1]);
         }
@@ -46,7 +48,7 @@ var MemorySettings;
             let card = document.createElement("div");
             let size = parseFloat(`${cardSize}`) * (150 - parseInt(`${pairAmount}`));
             let background = document.body;
-            document.getElementById("wrapper")?.appendChild(card);
+            wrapper.appendChild(card);
             card.style.height = `${size}px`;
             card.style.width = `${size}px`;
             card.style.lineHeight = `${size}px`;
@@ -58,10 +60,18 @@ var MemorySettings;
                 hndChange(i, card);
             } });
         }
-        setInterval(function () { if (endCondition == 0) {
+        const myInterval = setInterval(endTimer, 200);
+        function endTimer() { if (endCondition == 0) {
+            clearInterval(myInterval);
+            endGame();
+        } }
+        function endGame() {
+            let form = document.querySelector("form");
             alert(`Du hast Gewonnen in ${Math.floor((Date.now() - timeStarted)) / 1000} Sekunden`);
-            endCondition--;
-        } }, 200);
+            wrapper.replaceChildren();
+            memorySet = ["25", "24", "23", "22", "21", "20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "09", "08", "07", "06", "05", "04", "03", "02", "01"];
+            form.style.display = "inline";
+        }
     }
     let firstCard = { value: "", position: document.querySelector("body") };
     function hndChange(_i, _card) {
