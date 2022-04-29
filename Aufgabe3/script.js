@@ -71,7 +71,7 @@ var MemorySettings;
             wrapper.replaceChildren();
             memorySet = ["25", "24", "23", "22", "21", "20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "09", "08", "07", "06", "05", "04", "03", "02", "01"];
             form.style.display = "inline";
-        }
+        } //Ich habe hier testweise noch hinzugefügt, dass das Spiel wieder von vorne startet, wenn es gewonnen wurde, steht nicht in meinem AD drin
     }
     let firstCard = { value: "", position: document.querySelector("body") };
     function hndChange(_i, _card) {
@@ -80,25 +80,99 @@ var MemorySettings;
             setTimeout(function () { turnEnded = false; }, 2000);
             if (firstCard.position.innerHTML != memorySet[_i]) {
                 setTimeout(function () {
+                    let m = 25;
+                    let o = 4;
+                    let id = setInterval(frame, 1);
+                    function frame() {
+                        if (_card.style.filter != `grayscale(0)`) {
+                            _card.style.filter = `grayscale(${m}%)`;
+                            firstCard.position.style.filter = `grayscale(${m}%)`;
+                            m -= 1;
+                        }
+                        if (_card.style.borderRadius != `0.2em`) {
+                            _card.style.borderRadius = `${o}em`;
+                            firstCard.position.style.borderRadius = `${o}em`;
+                            o -= 0.2;
+                        }
+                        else {
+                            clearInterval(id);
+                        }
+                    }
                     _card.innerHTML = "";
                     firstCard.position.innerHTML = "";
                 }, 2000);
             }
             else {
                 setTimeout(function () {
-                    _card.style.visibility = "hidden";
-                    firstCard.position.style.visibility = "hidden";
+                    let n = 1.0;
+                    let i = 20;
+                    let id = setInterval(frame, 5);
+                    function frame() {
+                        if (i != 0) {
+                            _card.style.opacity = `${n}`;
+                            firstCard.position.style.opacity = `${n}`;
+                            n -= 0.05;
+                            i--;
+                        }
+                        else {
+                            clearInterval(id);
+                            _card.style.visibility = "hidden";
+                            firstCard.position.style.visibility = "hidden";
+                        }
+                    }
                     endCondition--;
                 }, 2000);
             }
         }
         if (!isFirstCard && _card != firstCard.position) {
             _card.innerHTML = memorySet[_i];
+            let n = 0;
+            let m = 0;
+            let o = 0.2;
+            let id = setInterval(frame, 1);
+            function frame() {
+                if (_card.style.fontSize != `${16}px`) {
+                    _card.style.fontSize = `${n}px`;
+                    n += 1;
+                }
+                if (_card.style.filter != `grayscale(60%)`) {
+                    _card.style.filter = `grayscale(${m}%)`;
+                    m += 5;
+                }
+                if (_card.style.borderRadius != `4em`) {
+                    _card.style.borderRadius = `${o}em`;
+                    o += 0.2;
+                }
+                else {
+                    clearInterval(id);
+                }
+            }
             endTurn();
             isFirstCard = true;
         }
         else if (isFirstCard) {
             _card.innerHTML = memorySet[_i];
+            let n = 0;
+            let m = 0;
+            let o = 0.2;
+            let id = setInterval(frame, 1);
+            function frame() {
+                if (_card.style.fontSize != `${16}px`) {
+                    _card.style.fontSize = `${n}px`;
+                    n += 1;
+                }
+                if (_card.style.filter != `grayscale(60%)`) {
+                    _card.style.filter = `grayscale(${m}%)`;
+                    m += 5;
+                }
+                if (_card.style.borderRadius != `4em`) {
+                    _card.style.borderRadius = `${o}em`;
+                    o += 0.2;
+                }
+                else {
+                    clearInterval(id);
+                }
+            }
             firstCard.value = memorySet[_i];
             firstCard.position = _card;
             isFirstCard = false;

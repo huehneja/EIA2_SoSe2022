@@ -60,7 +60,7 @@ namespace MemorySettings {
             card.addEventListener("click", function(): void {if (!turnEnded) {hndChange(i , card); }});
 
         }
-        const myInterval: any = setInterval(endTimer, 200);
+        const myInterval: ReturnType<typeof setInterval> = setInterval(endTimer, 200);
         function endTimer(): void {if (endCondition == 0) {clearInterval(myInterval); endGame(); }}
         function endGame(): void {
             let form: HTMLElement = <HTMLElement> document.querySelector("form");
@@ -79,23 +79,109 @@ namespace MemorySettings {
             setTimeout(function(): void {turnEnded = false; }, 2000);
             if (firstCard.position.innerHTML != memorySet[_i]) {
             setTimeout(function(): void {
+                let m: number = 25;
+                let o: number = 4;
+                let id: ReturnType<typeof setInterval> = setInterval(frame, 1);
+        
+                function frame(): void {
+                    if (_card.style.filter != `grayscale(0)`) {
+                        _card.style.filter = `grayscale(${m}%)`;
+                        firstCard.position.style.filter = `grayscale(${m}%)`;
+                        m -= 1 ;
+                    }
+                    if (_card.style.borderRadius != `0.2em`) {
+                        _card.style.borderRadius = `${o}em`;
+                        firstCard.position.style.borderRadius = `${o}em`;
+                        o -= 0.2;
+                         
+                    } else {
+                        clearInterval(id);
+                    }
+        
+                }
+                
                 _card.innerHTML = "";
                 firstCard.position.innerHTML = "";
+
             },         2000);
             } else {
                 setTimeout(function(): void {
-                    _card.style.visibility = "hidden";
-                    firstCard.position.style.visibility = "hidden";
+                    let n: number = 1.0;
+                    let i: number = 20;
+                    let id: ReturnType<typeof setInterval> = setInterval(frame, 5);
+            
+                    function frame(): void {
+                        if (i != 0) {
+                            _card.style.opacity = `${n}`;
+                            firstCard.position.style.opacity = `${n}`;
+                            n -= 0.05;
+                            i--;
+                        } else {
+                            clearInterval(id);
+                            _card.style.visibility = "hidden";
+                            firstCard.position.style.visibility = "hidden";
+                        }
+            
+                    }
+
                     endCondition--;
                 },         2000);                
             }
         }
         if (!isFirstCard && _card != firstCard.position) {
         _card.innerHTML = memorySet[_i];
+        
+        let n: number = 0;
+        let m: number = 0;
+        let o: number = 0.2;
+        let id: ReturnType<typeof setInterval> = setInterval(frame, 1);
+
+        function frame(): void {
+            if (_card.style.fontSize != `${16}px`) {
+                _card.style.fontSize = `${n}px`;
+                n += 1;
+            }
+            if (_card.style.filter != `grayscale(60%)`) {
+                _card.style.filter = `grayscale(${m}%)`;
+                m += 5 ;
+            }
+            if (_card.style.borderRadius != `4em`) {
+                _card.style.borderRadius = `${o}em`;
+                o += 0.2;
+                 
+            } else {
+                clearInterval(id);
+            }
+
+        }
         endTurn();
         isFirstCard = true;
         } else if (isFirstCard) {
         _card.innerHTML = memorySet[_i];
+
+        let n: number = 0;
+        let m: number = 0;
+        let o: number = 0.2;
+        let id: ReturnType<typeof setInterval> = setInterval(frame, 1);
+
+        function frame(): void {
+            if (_card.style.fontSize != `${16}px`) {
+                _card.style.fontSize = `${n}px`;
+                n += 1;
+            }
+            if (_card.style.filter != `grayscale(60%)`) {
+                _card.style.filter = `grayscale(${m}%)`;
+                m += 5 ;
+            }
+            if (_card.style.borderRadius != `4em`) {
+                _card.style.borderRadius = `${o}em`;
+                o += 0.2;
+                 
+            } else {
+                clearInterval(id);
+            }
+
+        }
         firstCard.value = memorySet[_i];
         firstCard.position = _card;
         isFirstCard = false;
