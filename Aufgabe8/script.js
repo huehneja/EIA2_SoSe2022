@@ -20,6 +20,7 @@ var GenerativeKunst;
             drawCurve();
             drawLine();
         }
+        setTimeout(function () { location.reload(); }, 2000);
         function drawBackground() {
             let gradient = crc2.createLinearGradient(0, 0, crc2.canvas.width, crc2.canvas.height);
             gradient.addColorStop(0, `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`);

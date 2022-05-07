@@ -19,6 +19,7 @@ function hndLoad(_event: Event): void {
     drawCurve();
     drawLine();
     }
+    setTimeout(function(): void {location.reload(); }, 2000); 
     function drawBackground(): void {
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, crc2.canvas.width, crc2.canvas.height);
 
