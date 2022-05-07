@@ -14,6 +14,7 @@ var GenerativeKunst;
         let crc2 = canvas.getContext("2d");
         drawBackground();
         for (let i = 0; i <= Math.floor(Math.random() * 200); i++) {
+            crc2.lineWidth = Math.floor(Math.random() * 5);
             drawCircle();
             drawRect();
             drawCurve();

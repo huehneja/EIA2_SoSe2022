@@ -13,6 +13,7 @@ function hndLoad(_event: Event): void {
     let crc2: CanvasRenderingContext2D = <CanvasRenderingContext2D> canvas.getContext("2d");
     drawBackground();
     for (let i: number = 0; i <= Math.floor(Math.random() * 200); i++) {
+    crc2.lineWidth = Math.floor(Math.random() * 5);
     drawCircle();
     drawRect();
     drawCurve();
