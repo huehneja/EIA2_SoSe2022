@@ -12,7 +12,7 @@ function hndLoad(_event: Event): void {
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas");
     let crc2: CanvasRenderingContext2D = <CanvasRenderingContext2D> canvas.getContext("2d");
     drawBackground();
-    for (let i: number = 0; i <= Math.floor(Math.random() * 50); i++) {
+    for (let i: number = 0; i <= Math.floor(Math.random() * 5); i++) {
     crc2.lineWidth = Math.floor(Math.random() * 5);
     drawCircle();
     drawRect();
