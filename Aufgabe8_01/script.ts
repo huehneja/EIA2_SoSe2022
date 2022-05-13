@@ -1,5 +1,5 @@
 /*
-Aufgabe: Aufgabe 08 GenerativeKunst
+Aufgabe: Aufgabe 08.01 GenerativeKunst
 Name: Jason Hühne
 Matrikel: 269665
 Datum: 07.05.2022
