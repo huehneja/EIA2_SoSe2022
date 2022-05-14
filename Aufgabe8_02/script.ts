@@ -19,6 +19,9 @@ function hndLoad(_event: Event): void {
     for (let i: number = 0; i <= 6; i++) {    
         drawPerson(30 + Math.random() * 940 , 550 + Math.random() * 250);
         }
+    for (let i: number = 0; i <= 2; i++) {    
+        drawBird(70 + Math.random() * 930 , 512 - Math.random()* 288);
+    }
     function drawHorizon(): void {
 
         var grad: CanvasGradient = crc2.createRadialGradient(500, 300, 0, 500, 320, 684.98);
@@ -59,7 +62,7 @@ function hndLoad(_event: Event): void {
         crc2.fill();
     }
     function drawClouds(_x: number, _y: number): void {
-        crc2.fillStyle = "white";
+        crc2.fillStyle = "rgba(255, 255, 255, 0.5)";
         crc2.beginPath();
         crc2.arc(_x + 10, _y + 30, 25, 0, 2 * Math.PI);
         crc2.arc(_x + 80, _y + 30, 40, 0, 2 * Math.PI);
@@ -71,6 +74,8 @@ function hndLoad(_event: Event): void {
     function drawPerson(_x: number, _y: number): void {
         crc2.save();
         crc2.translate(_x, _y);
+        if (Math.floor(Math.random() * 2) == 1) {
+        crc2.scale(-1, 1);}
         crc2.fillStyle = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
         crc2.rotate(Math.PI);
         crc2.beginPath();
@@ -92,6 +97,32 @@ function hndLoad(_event: Event): void {
         crc2.fillStyle = `lightblue`;
         crc2.beginPath();
         crc2.rect(12, 18, 12 , 6);
+        crc2.fill();
+        crc2.restore();
+    }
+    function drawBird(_x: number, _y: number): void {
+        crc2.save();
+        crc2.strokeStyle = "white";
+        crc2.fillStyle = "white";
+        crc2.lineWidth = 6;
+        crc2.translate(_x, _y);
+        crc2.rotate(Math.PI);
+        crc2.beginPath();
+        crc2.moveTo(-10, -10)
+        crc2.quadraticCurveTo(17, 10, 30, 0);
+        crc2.stroke();
+        crc2.beginPath();
+        crc2.ellipse(30, 0, 10, 8, 0, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.moveTo(30, 0)
+        crc2.quadraticCurveTo(43, 10, 70, -10);
+        crc2.stroke();
+        crc2.beginPath();
+        crc2.fillStyle = "orange";
+        crc2.moveTo(30, -10);
+        crc2.lineTo(27, 3);
+        crc2.lineTo(33, 3);
+        crc2.closePath();
         crc2.fill();
         crc2.restore();
     }
