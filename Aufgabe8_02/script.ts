@@ -3,7 +3,7 @@ Aufgabe: Aufgabe 08.02 Strand: Canvas
 Name: Jason Hühne
 Matrikel: 269665
 Datum: 13.05.2022
-Quellen: /
+Quellen: Die Wolken habe ich von Manuel kopiert
 */
 namespace StrandCanvas { 
 window.addEventListener("load", hndLoad);
@@ -14,6 +14,11 @@ function hndLoad(_event: Event): void {
     drawSun();
     drawWater();
     drawBeach();
+    drawClouds(200, 200);
+    drawClouds(700, 150);
+    for (let i: number = 0; i <= 6; i++) {    
+        drawPerson(30 + Math.random() * 940 , 550 + Math.random() * 250);
+        }
     function drawHorizon(): void {
 
         var grad: CanvasGradient = crc2.createRadialGradient(500, 300, 0, 500, 320, 684.98);
@@ -52,6 +57,43 @@ function hndLoad(_event: Event): void {
         crc2.lineTo(0, 800);
         crc2.closePath();
         crc2.fill();
+    }
+    function drawClouds(_x: number, _y: number): void {
+        crc2.fillStyle = "white";
+        crc2.beginPath();
+        crc2.arc(_x + 10, _y + 30, 25, 0, 2 * Math.PI);
+        crc2.arc(_x + 80, _y + 30, 40, 0, 2 * Math.PI);
+        crc2.arc(_x + 50, _y + 20, 35, 0, 2 * Math.PI);
+        crc2.arc(_x + 100, _y + 40, 25, 0, 2 * Math.PI);
+        crc2.closePath();
+        crc2.fill();
+    }
+    function drawPerson(_x: number, _y: number): void {
+        crc2.save();
+        crc2.translate(_x, _y);
+        crc2.fillStyle = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        crc2.rotate(Math.PI);
+        crc2.beginPath();
+        crc2.moveTo(6, 0);
+        crc2.lineTo(12, 0);
+        crc2.lineTo(12, 6);
+        crc2.lineTo(18, 6);
+        crc2.lineTo(18, 0);
+        crc2.lineTo(24, 0);
+        crc2.lineTo(24, 30);
+        crc2.lineTo(6, 30);
+        crc2.lineTo(6, 24);
+        crc2.lineTo(0, 24);
+        crc2.lineTo(0, 12);
+        crc2.lineTo(6, 12);
+        crc2.closePath();
+        crc2.fill();
+
+        crc2.fillStyle = `lightblue`;
+        crc2.beginPath();
+        crc2.rect(12, 18, 12 , 6);
+        crc2.fill();
+        crc2.restore();
     }
 }
 }
