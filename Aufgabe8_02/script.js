@@ -3,7 +3,7 @@
 Aufgabe: Aufgabe 08.02 Strand: Canvas
 Name: Jason Hühne
 Matrikel: 269665
-Datum: 13.05.2022
+Datum: 14.05.2022
 Quellen: Die Wolken habe ich von Manuel kopiert
 */
 var StrandCanvas;
