@@ -4,45 +4,8 @@ body {
     width: 800px;
     margin: 0 auto;
 }
-nav a {
-    text-decoration: none;
-    margin: 1px;
-    color:seashell;
-    padding: 5px 8px;
-}
-nav li:hover:not(.active)
-{
- background-color: #C0C0C0;
-}
 .active {
     background-color: #303030;
-}
-
-nav ul {
-    display: inline-flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    right: 25%;
-
-}
-nav li {
-    color: seashell;
-    background-color: #0d0c0c;
-    
-    text-align: center;
-    font-weight: bold;
-    padding: 1%;
-    box-shadow: 0px 0px 10px black;
-
-}
-nav li:first-child {
-    border-bottom-left-radius: 10px;
-}
-nav li:last-child {
-    border-bottom-right-radius: 10px;
 }
 #circle {
     height: 800px;
