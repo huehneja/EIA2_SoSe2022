@@ -1,0 +1,165 @@
+body {
+    background-image: url(../img/bg.png);
+    font-family: sans-serif;
+    width: 800px;
+    margin: 0 auto;
+}
+nav a {
+    text-decoration: none;
+    margin: 1px;
+    color:seashell;
+    padding: 5px 8px;
+}
+nav li:hover:not(.active)
+{
+ background-color: #C0C0C0;
+}
+.active {
+    background-color: #303030;
+}
+
+nav ul {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 25%;
+
+}
+nav li {
+    color: seashell;
+    background-color: #0d0c0c;
+    
+    text-align: center;
+    font-weight: bold;
+    padding: 1%;
+    box-shadow: 0px 0px 10px black;
+
+}
+nav li:first-child {
+    border-bottom-left-radius: 10px;
+}
+nav li:last-child {
+    border-bottom-right-radius: 10px;
+}
+#circle {
+    height: 800px;
+    width: 800px;
+    background-color: #7d7d7d;
+    border-radius: 50%;
+    margin: -350px 0 0;
+    text-align: center;
+    color: seashell;
+    box-shadow: 0px 0px 100px rgb(41, 41, 41);
+}
+.title {
+    display: inline-block;
+    margin-top: 370px;
+    letter-spacing: -10px;
+    margin-bottom: -100%;
+    font-size: 170px;
+    text-shadow: 2px 2px 4px #000000;
+}
+.subtitle {
+    font-size: 50px;
+    letter-spacing: -3px;
+    text-align: right;
+    margin-right: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 8px #000000;
+}
+.blazon {
+    margin-left: 10%;
+    margin-top: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px black;
+    border-style: solid;
+    border-color: grey;
+    float: left;
+}
+.blazon:hover {
+    border-color:#C0C0C0;
+}
+.subsubtitle {
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-top: 6%;
+    margin-right: 25%;
+    font-weight: lighter;
+    color: #303030;
+}
+.engraving  {
+    font-size: 8px;
+    color: #303030;
+    margin-top: 10%;
+}
+.iconbar ul {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0;
+    margin-right: 30%;
+    margin-top: 6%;
+}
+.iconbar li {
+    margin-right: 50%;
+    filter: saturate(0);
+}
+.iconbar li:hover {
+    filter: saturate(100%);
+}
+main {
+    margin-top: 30%;
+    text-align: center;
+}
+main img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 4px 0;
+    border: 2px;
+    font-weight: 700;
+    color: #0d0c0c;
+    font-size: 14px;
+    float: left;
+  }
+input[type=submit] {
+    background-color: #0d0c0c;
+    border: transparent;
+    color: seashell;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+  }
+
+input[type=submit]:hover {
+      background-color: #C0C0C0;
+  }
+#contact p {
+    display: block;
+    width: 50%;
+    font-weight: 300;
+    color: #C0C0C0;
+    font-size: 12px;
+    text-align: left;
+    float: left;
+    margin-right: 50%;
+}
+#contact a {
+    text-decoration: underline;
+    color: inherit;
+}
+#contact a:hover {
+    color: #0d0c0c;
+}
+img, video {
+    margin-bottom: 10px;
+}
