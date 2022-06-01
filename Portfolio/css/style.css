@@ -113,53 +113,26 @@ nav li:last-child {
 main {
     margin-top: 30%;
     text-align: center;
-}
-main img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-input[type=text] {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 4px 0;
-    border: 2px;
-    font-weight: 700;
-    color: #0d0c0c;
-    font-size: 14px;
-    float: left;
-  }
-input[type=submit] {
-    background-color: #0d0c0c;
-    border: transparent;
-    color: seashell;
-    padding: 16px 32px;
-    text-decoration: none;
-    cursor: pointer;
-    float: left;
-  }
-
-input[type=submit]:hover {
-      background-color: #C0C0C0;
-  }
-#contact p {
-    display: block;
-    width: 50%;
-    font-weight: 300;
-    color: #C0C0C0;
-    font-size: 12px;
-    text-align: left;
-    float: left;
-    margin-right: 50%;
-}
-#contact a {
-    text-decoration: underline;
-    color: inherit;
-}
-#contact a:hover {
-    color: #0d0c0c;
+    margin-bottom: 2.5cm;
 }
 img, video {
     margin-bottom: 10px;
+}
+h4 {
+    font-size: 14px;
+    margin-top: 50px;
+}
+h5 {
+    font-size: 14px;
+    margin-top: 50px;
+}
+main a img {
+    border-radius: 2em;
+    height: 150px;
+    width: 150px;
+}
+main img, main video {
+    max-width: 50%;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
