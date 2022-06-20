@@ -89,7 +89,7 @@ h5 {
     font-size: 14px;
     margin-top: 50px;
 }
-main a img {
+.app {
     border-radius: 2em;
     height: 150px;
     width: 150px;
@@ -98,4 +98,7 @@ main img, main video {
     max-width: 50%;
     margin-top: 10px;
     margin-bottom: 50px;
+}
+.zoom:hover {
+    cursor: zoom-in;
 }
