@@ -1,3 +1,4 @@
+"use strict";
 //Variablen für die Erschaffung des Kartenspiels und der einzelnen Stapel + Interface für die Karten//
 var symbole = ["kreuz", "pik", "herz", "karo"];
 var werte = ["A", "7", "8", "9", "10", "J", "Q", "K"];
@@ -62,29 +63,25 @@ window.addEventListener("load", function () {
         document.getElementById("ablagekarten").innerHTML = "";
         document.getElementById("spielerkarten").innerHTML = "";
         document.getElementById("computerkarten").innerHTML = "";
-        var _loop_1 = function (i_1) {
-            scard = document.createElement("div");
-            wert = document.createElement("p");
-            wert.innerHTML = spielerkarten[i_1].wert;
+        //Spielerkarten werden gerendert//
+        for (let i = 0; i < spielerkarten.length; i++) {
+            var scard = document.createElement("div");
+            var wert = document.createElement("p");
+            wert.innerHTML = spielerkarten[i].wert;
             document.getElementById("spielerkarten").appendChild(scard);
             scard.appendChild(wert);
-            scard.className = spielerkarten[i_1].symbol;
+            scard.className = spielerkarten[i].symbol;
             if (myTurn) {
                 //Wenn eine Karte spielbar ist erhält sie den EventListener, der sie auf den Ablagestapel legt und den Zug beendet//
-                if (spielerkarten[i_1].symbol == ablagekarten[0].symbol || spielerkarten[i_1].wert == ablagekarten[0].wert) {
+                if (spielerkarten[i].symbol == ablagekarten[0].symbol || spielerkarten[i].wert == ablagekarten[0].wert) {
                     scard.addEventListener("click", function () { if (!endGame) {
-                        ablagekarten.unshift(spielerkarten[i_1]), spielerkarten.splice(i_1, 1), endTurn();
+                        ablagekarten.unshift(spielerkarten[i]), spielerkarten.splice(i, 1), endTurn();
                     } });
                 }
             }
-        };
-        var scard, wert;
-        //Spielerkarten werden gerendert//
-        for (var i_1 = 0; i_1 < spielerkarten.length; i_1++) {
-            _loop_1(i_1);
         }
         //Computerkarten werden gerendert//
-        for (var i_2 = 0; i_2 < computerkarten.length; i_2++) {
+        for (let i = 0; i < computerkarten.length; i++) {
             var ccard = document.createElement("div");
             document.getElementById("computerkarten").appendChild(ccard);
         }
@@ -134,9 +131,9 @@ window.addEventListener("load", function () {
     }
     //Der Computer prüft nacheinander ob eine Karte spielbar ist, wenn das nicht der Fall ist zieht er eine Karte, ansonsten spielt er die spielbare Karte//
     function computerTurn() {
-        for (var x_1 = 0; x_1 < computerkarten.length; x_1++) {
-            if (computerkarten[x_1].symbol == ablagekarten[0].symbol || computerkarten[x_1].wert == ablagekarten[0].wert) {
-                ablagekarten.unshift(computerkarten[x_1]), computerkarten.splice(x_1, 1);
+        for (let x = 0; x < computerkarten.length; x++) {
+            if (computerkarten[x].symbol == ablagekarten[0].symbol || computerkarten[x].wert == ablagekarten[0].wert) {
+                ablagekarten.unshift(computerkarten[x]), computerkarten.splice(x, 1);
                 endTurn();
                 break;
             }
@@ -148,3 +145,4 @@ window.addEventListener("load", function () {
     //Eventlistener für den Ziehkartenstapel//
     document.getElementById("test").addEventListener("click", function () { ziehKarteSpieler(); });
 });
+//# sourceMappingURL=script.js.map
