@@ -1,4 +1,11 @@
 "use strict";
+/*
+Aufgabe: Abschlussarbeit SS22 - Gemüsegarten-Simulator
+Name: Jason Hühne
+Matrikelnummer: 269665
+Datum: 19.07.2022
+In Zusammenarbeit mit Robin Knüttel und Ilkan Özdemir
+*/
 var FieldSimulator;
 (function (FieldSimulator) {
     let difficulty;
