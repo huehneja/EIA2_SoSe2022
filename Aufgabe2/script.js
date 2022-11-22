@@ -26,11 +26,11 @@ var EventInspector;
         let span = document.querySelector("span");
         let posX = `${_event.clientX}`;
         let posY = `${_event.clientY}`;
+        span.innerHTML = `X: ${posX}, Y: ${posY}, ${_event.target}`;
         let posXoffset = 10 + _event.clientX;
         let posYoffset = 10 + _event.clientY;
-        span.innerHTML = `X: ${posX}, Y: ${posY} , ${_event.target}`;
-        span.style.left = posXoffset + "px";
-        span.style.top = posYoffset + "px";
+        span.style.left = `${posXoffset}px`;
+        span.style.top = `${posYoffset}px`;
     }
     function logInfo(_event) {
         console.log("Event Type: ", _event.type);

@@ -27,11 +27,11 @@ function setInfoBox(_event: MouseEvent): void {
 let span: HTMLSpanElement = <HTMLSpanElement>document.querySelector("span");
 let posX: string = `${_event.clientX}`;
 let posY: string = `${_event.clientY}`;
+span.innerHTML = `X: ${posX}, Y: ${posY}, ${_event.target}`; 
 let posXoffset: number = 10 + _event.clientX;
 let posYoffset: number = 10 + _event.clientY;
-span.innerHTML = `X: ${posX}, Y: ${posY} , ${_event.target}`;
-span.style.left = posXoffset + "px";
-span.style.top = posYoffset + "px";
+span.style.left = `${posXoffset}px`;
+span.style.top = `${posYoffset}px`;
 }
 function logInfo(_event: Event): void {
     console.log("Event Type: ", _event.type);
