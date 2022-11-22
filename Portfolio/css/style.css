@@ -10,12 +10,14 @@ body {
 #circle {
     height: 800px;
     width: 800px;
-    background-color: #7d7d7d;
+    background-color: #8A936D;
     border-radius: 50%;
-    margin: -350px 0 0;
+    top: -390px;
     text-align: center;
     color: seashell;
-    box-shadow: 0px 0px 100px rgb(41, 41, 41);
+    box-shadow: 0px 0px 100px #434735;
+    position: fixed;
+    transition: top 0.6s ease-in-out;
 }
 .title {
     display: inline-block;
@@ -23,7 +25,7 @@ body {
     letter-spacing: -10px;
     margin-bottom: -100%;
     font-size: 170px;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #434735;
 }
 .subtitle {
     font-size: 50px;
@@ -32,42 +34,35 @@ body {
     margin-right: 100px;
     margin-top: 0;
     margin-bottom: 0;
-    text-shadow: 2px 2px 8px #000000;
+    text-shadow: 2px 2px 8px #434735;
 }
 .blazon {
-    margin-left: 10%;
-    margin-top: 0;
+    margin: 0% 6% 0% 13%;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px black;
     border-style: solid;
-    border-color: grey;
+    border-color: #434735;
+    border-width: 2px;
     float: left;
-}
-.blazon:hover {
-    border-color:#C0C0C0;
+    transition: height 0.6s ease-in-out, margin 0.6s ease-in-out;
 }
 .subsubtitle {
+    position: inline;
     font-size: 15px;
     letter-spacing: 3px;
-    margin-top: 6%;
-    margin-right: 25%;
+    margin-top: 10%;
+    margin-right: 20%;
     font-weight: lighter;
     color: #303030;
-}
-.engraving  {
-    font-size: 8px;
-    color: #303030;
-    margin-top: 10%;
+    text-align: left;
 }
 .iconbar ul {
+    position: fixed;
     display: inline-flex;
     list-style-type: none;
     padding: 0;
-    margin-right: 30%;
-    margin-top: 6%;
 }
 .iconbar li {
-    margin-right: 50%;
+    margin-top: 100%;
     filter: saturate(0);
 }
 .iconbar li:hover {
