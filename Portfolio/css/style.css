@@ -98,3 +98,13 @@ main img, main video {
 .zoom:hover {
     cursor: zoom-in;
 }
+h4, h5, h6 {
+ width: 100px;
+ display: inline-flex;
+ height: auto;
+ float: middle;
+}
+#iconbar {
+margin: 0 auto;
+padding: 500px 0 250px 0;
+}
