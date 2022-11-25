@@ -3,6 +3,7 @@ body {
     font-family: sans-serif;
     width: 800px;
     margin: 0 auto;
+    background-color: #8A936D;
 }
 .active {
     background-color: #303030;
@@ -15,13 +16,13 @@ body {
     top: -390px;
     text-align: center;
     color: seashell;
-    box-shadow: 0px 0px 100px #434735;
+    box-shadow: 0px 0px 50px #434735;
     position: fixed;
     transition: top 0.6s ease-in-out;
 }
 .title {
     display: inline-block;
-    margin-top: 370px;
+    margin-top: 390px;
     letter-spacing: -10px;
     margin-bottom: -100%;
     font-size: 170px;
@@ -56,18 +57,17 @@ body {
     text-align: left;
     transition: opacity 0.6s ease-in;
 }
-.iconbar ul {
-    position: fixed;
+.iconbar {
     display: inline-flex;
     list-style-type: none;
     padding: 0;
 }
-.iconbar li {
-    margin-top: 100%;
-    filter: saturate(0);
+.iconbar img {
+    filter: saturate(0%);
 }
-.iconbar li:hover {
+.iconbar img:hover {
     filter: saturate(100%);
+    cursor: pointer;
 }
 main {
     margin-top: 30%;
@@ -94,6 +94,10 @@ main img, main video {
     max-width: 50%;
     margin-top: 10px;
     margin-bottom: 50px;
+}
+main img:hover {
+    filter: invert(100%);
+    cursor: pointer;
 }
 .zoom:hover {
     cursor: zoom-in;

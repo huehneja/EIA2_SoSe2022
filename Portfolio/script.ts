@@ -10,7 +10,7 @@ function animate(): void {
     let circle: HTMLDivElement = <HTMLDivElement> document.getElementById("circle")
     let blazon: HTMLImageElement = <HTMLImageElement> document.querySelector(".blazon")
     let subSubtitle: HTMLHeadingElement = <HTMLHeadingElement> document.querySelector("h3")
-    circle.style.top= `-650px`
+    circle.style.top = `-650px`
     blazon.style.height = `70px`
     blazon.style.margin =  `8% 8% 0px 20% `
     subSubtitle.style.opacity = "0%"
