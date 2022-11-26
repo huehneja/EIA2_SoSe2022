@@ -1,14 +1,14 @@
 body {
     background-image: url(../img/bg.png);
     font-family: sans-serif;
-    width: 800px;
-    margin: 0 auto;
     background-color: #8A936D;
 }
 .active {
     background-color: #303030;
 }
 #circle {
+    left: 50%;
+    transform: translate(-50%, 0);
     height: 800px;
     width: 800px;
     background-color: #8A936D;
@@ -18,7 +18,7 @@ body {
     color: seashell;
     box-shadow: 0px 0px 50px #434735;
     position: fixed;
-    transition: top 0.6s ease-in-out;
+    transition: top 0.4s ease-in-out;
 }
 .title {
     display: inline-block;
@@ -44,7 +44,7 @@ body {
     border-color: #434735;
     border-width: 2px;
     float: left;
-    transition: height 0.6s ease-in-out, margin 0.6s ease-in-out;
+    transition: height 0.4s ease-in-out, margin 0.4s ease-in-out;
 }
 .subsubtitle {
     position: inline;
@@ -55,7 +55,7 @@ body {
     font-weight: lighter;
     color: #d4e0a8;
     text-align: left;
-    transition: opacity 0.6s ease-in;
+    transition: opacity 0.4s ease-in;
 }
 .iconbar {
     display: inline-flex;
@@ -72,18 +72,9 @@ body {
 main {
     margin-top: 30%;
     text-align: center;
-    margin-bottom: 2.5cm;
 }
 img, video {
     margin-bottom: 10px;
-}
-h4 {
-    font-size: 14px;
-    margin-top: 50px;
-}
-h5 {
-    font-size: 14px;
-    margin-top: 50px;
 }
 .app {
     border-radius: 2em;
@@ -102,13 +93,20 @@ main img:hover {
 .zoom:hover {
     cursor: zoom-in;
 }
-h4, h5, h6 {
- width: 100px;
- display: inline-flex;
- height: auto;
- float: middle;
-}
 #iconbar {
 margin: 0 auto;
-padding: 500px 0 250px 0;
+margin-top: 7%;
+display: inline-flex;
+}
+#iconbar img {
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.containerDiv {
+    width: 100%;
+    height: 400px;
+    margin: 0;
+    background-color: white;
+    margin-bottom: 5%;
 }

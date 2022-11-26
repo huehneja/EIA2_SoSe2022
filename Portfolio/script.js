@@ -4,13 +4,18 @@ var imageLoad;
     window.addEventListener("load", hndLoad);
     let scrolled = false;
     function hndLoad() {
-        document.querySelector("#circle")?.addEventListener("mouseover", hndClick);
+        document.querySelector("#circle")?.addEventListener("mouseenter", hndClick);
+        document.querySelector("#circle")?.addEventListener("mouseleave", function () { if (menuOpen == true) {
+            requestAnimationFrame(animate);
+        } });
+        document.getElementById("codeButton")?.addEventListener("click", function () { expandMenu("code"); });
+        document.getElementById("designButton")?.addEventListener("click", function () { expandMenu("design"); });
+        document.getElementById("avButton")?.addEventListener("click", function () { expandMenu("av"); });
         document.onscroll = function () { if (scrolled == false) {
             requestAnimationFrame(animate);
         } };
     }
     function animate() {
-        console.log("test");
         let circle = document.getElementById("circle");
         let blazon = document.querySelector(".blazon");
         let subSubtitle = document.querySelector("h3");
@@ -32,4 +37,28 @@ var imageLoad;
         scrolled = false;
     }
 })(imageLoad || (imageLoad = {}));
+let menuOpen = false;
+let containerDiv = document.createElement("div");
+function expandMenu(_type) {
+    if (menuOpen == false) {
+        containerDiv.classList.add("containerDiv");
+        document.body.appendChild(containerDiv);
+        window.scroll({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+        menuOpen = true;
+    }
+    switch (_type) {
+        case "code":
+            containerDiv.innerHTML = "code";
+            break;
+        case "design":
+            containerDiv.innerHTML = "design";
+            break;
+        case "av":
+            containerDiv.innerHTML = "av";
+            break;
+    }
+}
 //# sourceMappingURL=script.js.map
