@@ -7,6 +7,7 @@ body {
     background-color: #303030;
 }
 #circle {
+    z-index: 1;
     left: 50%;
     transform: translate(-50%, 0);
     height: 800px;
@@ -57,56 +58,59 @@ body {
     text-align: left;
     transition: opacity 0.4s ease-in;
 }
-.iconbar {
-    display: inline-flex;
-    list-style-type: none;
-    padding: 0;
-}
-.iconbar img {
-    filter: saturate(0%);
-}
-.iconbar img:hover {
-    filter: saturate(100%);
-    cursor: pointer;
-}
 main {
     margin-top: 30%;
     text-align: center;
 }
-img, video {
-    margin-bottom: 10px;
+
+#iconbar i {
+    color: #d4e0a8;
+    font-size: 50px;
+    margin: 20px;
+    text-shadow: 0px 0px 2px #434735;
 }
-.app {
-    border-radius: 2em;
-    height: 150px;
-    width: 150px;
-}
-main img, main video {
-    max-width: 50%;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-main img:hover {
-    filter: invert(100%);
+
+#iconbar i:hover {
+    color: #434735;
     cursor: pointer;
 }
-.zoom:hover {
-    cursor: zoom-in;
-}
-#iconbar {
-margin: 0 auto;
-margin-top: 7%;
-display: inline-flex;
-}
-#iconbar img {
-    height: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+
+
 .containerDiv {
+    position: relative;
+    width: 800px;
+    height: 666px;
+    margin: 0 auto;
+    background-color: #d4e0a8;
+    margin-bottom: 0.5em;
+}
+.containerDiv img {
+    height: 150px;
+    border-radius: 0.5em;
+    margin: 5px;
+    cursor: pointer;
+    
+}
+.containerDiv h4 {
+    font-size: 32pt;
+    margin: 2px;
+}
+.containerDiv button {
     width: 100%;
-    height: 400px;
-    margin: 0;
-    background-color: white;
-    margin-bottom: 5%;
+    border: none;
+    color: #434735;
+    background-color: #d4e0a8;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0px 0px 2px #434735;
+}
+.containerDiv button:last-child {
+    position: absolute;
+    bottom: 0;
+}
+.containerDiv button:hover {
+    background-color: #8A936D;
+    cursor: pointer;
 }

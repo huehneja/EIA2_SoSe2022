@@ -36,29 +36,64 @@ var imageLoad;
         subSubtitle.style.opacity = "100%";
         scrolled = false;
     }
+    let menuOpen = false;
+    let containerDiv = document.createElement("div");
+    let lastOpen = "";
+    function expandMenu(_type) {
+        if (menuOpen == false) {
+            containerDiv.classList.add("containerDiv");
+            document.body.appendChild(containerDiv);
+            window.scroll({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+            menuOpen = true;
+        }
+        switch (_type) {
+            case "code":
+                displayPreview(imageLoad.data.Code);
+                lastOpen = "code";
+                break;
+            case "design":
+                displayPreview(imageLoad.data.Design);
+                lastOpen = "design";
+                break;
+            case "av":
+                displayPreview(imageLoad.data.AV);
+                lastOpen = "av";
+                break;
+        }
+    }
+    function displayPreview(_data) {
+        containerDiv.innerHTML = "";
+        for (let i = 0; i < _data.length; i++) {
+            let previewImg = document.createElement("img");
+            previewImg.src = _data[i].imgFile;
+            previewImg.alt = _data[i].name;
+            containerDiv.appendChild(previewImg);
+            previewImg.addEventListener("click", function () { display(_data[i]); });
+        }
+        function display(_item) {
+            containerDiv.innerHTML = "";
+            let backButton = document.createElement("button");
+            backButton.addEventListener("click", function () { expandMenu(lastOpen); });
+            backButton.innerHTML = "Zurück";
+            containerDiv.appendChild(backButton);
+            let previewImg = document.createElement("img");
+            previewImg.src = _item.imgFile;
+            previewImg.alt = _item.name;
+            containerDiv.appendChild(previewImg);
+            let headline = document.createElement("h4");
+            headline.innerHTML = _item.name;
+            containerDiv.appendChild(headline);
+            let text = document.createElement("p");
+            text.innerHTML = _item.about;
+            containerDiv.appendChild(text);
+            let button = document.createElement("button");
+            button.addEventListener("click", function () { window.open(_item.webLink); });
+            button.innerHTML = "Link";
+            containerDiv.appendChild(button);
+        }
+    }
 })(imageLoad || (imageLoad = {}));
-let menuOpen = false;
-let containerDiv = document.createElement("div");
-function expandMenu(_type) {
-    if (menuOpen == false) {
-        containerDiv.classList.add("containerDiv");
-        document.body.appendChild(containerDiv);
-        window.scroll({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-        menuOpen = true;
-    }
-    switch (_type) {
-        case "code":
-            containerDiv.innerHTML = "code";
-            break;
-        case "design":
-            containerDiv.innerHTML = "design";
-            break;
-        case "av":
-            containerDiv.innerHTML = "av";
-            break;
-    }
-}
 //# sourceMappingURL=script.js.map

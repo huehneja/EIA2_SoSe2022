@@ -31,9 +31,10 @@ function hndClick(): void {
     subSubtitle.style.opacity = "100%"
     scrolled = false;
     }
-}
+
 let menuOpen: boolean = false
 let containerDiv: HTMLDivElement = document.createElement("div");
+let lastOpen: string = "";
 function expandMenu(_type: string): void {
     if (menuOpen == false){
 containerDiv.classList.add("containerDiv");
@@ -44,8 +45,42 @@ document.body.appendChild(containerDiv);window.scroll({
   menuOpen = true
 }
   switch (_type) {
-    case "code": containerDiv.innerHTML = "code"; break;
-    case "design": containerDiv.innerHTML = "design"; break;
-    case "av": containerDiv.innerHTML = "av"; break;
+    case "code": displayPreview(data.Code); lastOpen = "code"; break;
+    case "design": displayPreview(data.Design); lastOpen = "design"; break;
+    case "av": displayPreview(data.AV); lastOpen = "av"; break;
   }
+}
+
+function displayPreview(_data: Item[]){
+  containerDiv.innerHTML = ""
+for (let i= 0; i < _data.length; i++){
+  let previewImg = document.createElement("img")
+  previewImg.src = _data[i].imgFile
+  previewImg.alt = _data[i].name
+  containerDiv.appendChild(previewImg)
+  previewImg.addEventListener("click", function() { display(_data[i])})
+}
+function display(_item: Item){
+  containerDiv.innerHTML = ""
+  let backButton = document.createElement("button")
+  backButton.addEventListener("click", function() { expandMenu(lastOpen)})
+  backButton.innerHTML = "Zurück"
+  containerDiv.appendChild(backButton)
+  let previewImg = document.createElement("img")
+  previewImg.src = _item.imgFile
+  previewImg.alt = _item.name
+  containerDiv.appendChild(previewImg)
+  let headline = document.createElement("h4")
+  headline.innerHTML = _item.name
+  containerDiv.appendChild(headline)
+  let text = document.createElement("p")
+  text.innerHTML = _item.about
+  containerDiv.appendChild(text)
+  let button = document.createElement("button")
+  button.addEventListener("click", function(): void {window.open(_item.webLink);})
+  button.innerHTML = "Link"
+  containerDiv.appendChild(button)
+  
+}
+}
 }
