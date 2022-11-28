@@ -92,7 +92,8 @@ var imageLoad;
             containerDiv.appendChild(about);
             if (_item.programs != "undefined") {
                 let programs = document.createElement("p");
-                programs.innerHTML = "Software: " + _item.programs;
+                programs.innerHTML = _item.programs;
+                programs.style.fontWeight = "bold";
                 containerDiv.appendChild(programs);
             }
             if (_item.webLink != "undefined") {
