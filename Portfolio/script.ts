@@ -57,6 +57,7 @@ for (let i= 0; i < _data.length; i++){
   let previewImg = document.createElement("img")
   previewImg.src = _data[i].imgFile
   previewImg.alt = _data[i].name
+  previewImg.classList.add("pointer")
   containerDiv.appendChild(previewImg)
   previewImg.addEventListener("click", function() { display(_data[i])})
 }
@@ -73,13 +74,20 @@ function display(_item: Item){
   let headline = document.createElement("h4")
   headline.innerHTML = _item.name
   containerDiv.appendChild(headline)
-  let text = document.createElement("p")
-  text.innerHTML = _item.about
-  containerDiv.appendChild(text)
+  let about = document.createElement("p")
+  about.innerHTML = _item.about
+  containerDiv.appendChild(about)
+  if (_item.programs != "undefined"){
+  let programs = document.createElement("p")
+  programs.innerHTML = "Software: " + _item.programs
+  containerDiv.appendChild(programs)
+  }
+  if (_item.webLink != "undefined"){
   let button = document.createElement("button")
   button.addEventListener("click", function(): void {window.open(_item.webLink);})
   button.innerHTML = "Link"
   containerDiv.appendChild(button)
+  }
   
 }
 }

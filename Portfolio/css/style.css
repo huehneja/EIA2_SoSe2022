@@ -77,21 +77,26 @@ main {
 
 
 .containerDiv {
+    text-align: center;
+    border-radius: 0.5em;
     position: relative;
     width: 800px;
-    height: 666px;
+    height: 500px;
     margin: 0 auto;
     background-color: #d4e0a8;
     margin-bottom: 0.5em;
+    font-size: 12pt;
 }
 .containerDiv img {
     height: 150px;
     border-radius: 0.5em;
     margin: 5px;
-    cursor: pointer;
+    border-style: solid;
+    border-color: #434735;
+    border-width: 2px;
 }
 .containerDiv h4 {
-    font-size: 32pt;
+    font-size: 26pt;
     margin: 2px;
 }
 .containerDiv button {
@@ -106,10 +111,14 @@ main {
     box-shadow: 0px 0px 2px #434735;
 }
 .containerDiv button:last-child {
-    position: absolute;
-    bottom: 0;
+position: absolute;
+left: 0%;
+bottom: 0;
 }
 .containerDiv button:hover {
     background-color: #8A936D;
+    cursor: pointer;
+}
+.pointer {
     cursor: pointer;
 }
