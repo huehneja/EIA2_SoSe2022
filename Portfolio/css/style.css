@@ -77,10 +77,10 @@ main {
 
 
 .containerDiv {
-    text-align: center;
+    text-align: left;
     border-radius: 0.5em;
     position: relative;
-    width: 800px;
+    width: 500px;
     height: 500px;
     margin: 0 auto;
     background-color: #d4e0a8;
