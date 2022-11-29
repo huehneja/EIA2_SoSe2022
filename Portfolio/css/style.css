@@ -77,7 +77,6 @@ main {
 
 
 .containerDiv {
-    text-align: left;
     border-radius: 0.5em;
     position: relative;
     width: 500px;
@@ -87,10 +86,14 @@ main {
     margin-bottom: 0.5em;
     font-size: 12pt;
 }
+.containerDiv:last-child {
+    text-align: left;
+}
 .containerDiv img {
     height: 150px;
     border-radius: 0.5em;
-    margin: 5px;
+    margin: 6px;
+    margin-bottom: 1px;
     border-style: solid;
     border-color: #434735;
     border-width: 2px;
@@ -98,6 +101,7 @@ main {
 .containerDiv h4 {
     font-size: 26pt;
     margin: 2px;
+    text-align: center;
 }
 .containerDiv button {
     width: 100%;
@@ -118,6 +122,9 @@ bottom: 0;
 .containerDiv button:hover {
     background-color: #8A936D;
     cursor: pointer;
+}
+.containerDiv p {
+    text-align: center;
 }
 .pointer {
     cursor: pointer;
