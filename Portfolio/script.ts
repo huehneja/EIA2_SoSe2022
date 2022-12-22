@@ -67,9 +67,14 @@ function display(_item: Item){
   backButton.addEventListener("click", function() { expandMenu(lastOpen)})
   backButton.innerHTML = "Zurück"
   containerDiv.appendChild(backButton)
+  let newLine = document.createElement("br")
+  containerDiv.appendChild(newLine)
   let previewImg = document.createElement("img")
   previewImg.src = _item.imgFile
   previewImg.alt = _item.name
+  previewImg.style.marginLeft = "auto"
+  previewImg.style.marginRight = "auto"
+  previewImg.style.display = "block"
   containerDiv.appendChild(previewImg)
   let headline = document.createElement("h4")
   headline.innerHTML = _item.name
