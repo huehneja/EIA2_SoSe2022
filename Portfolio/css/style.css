@@ -62,7 +62,24 @@ main {
     margin-top: 30%;
     text-align: center;
 }
-
+.connectionbar {
+    display: inline-flex;
+}
+.connectionbar a {
+    margin: -12px 13px 0px 13px;
+}
+.connectionbar a:first-child {
+    margin: -6px 13px 0px 200px;
+}
+.connectionbar a:last-child {
+    margin: -24px 13px 0px 13px;
+}
+.connectionbar img {
+filter:grayscale(1);
+}
+.connectionbar img:hover {
+    filter:grayscale(0);   
+}
 #iconbar i {
     color: #d4e0a8;
     font-size: 50px;
